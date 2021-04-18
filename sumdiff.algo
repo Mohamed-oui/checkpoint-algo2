@@ -1,0 +1,27 @@
+ALGORITHM sumdiff
+VAR
+    arr1,arr2 : ARRAY_OF INTEGER;
+    sum,i,j,n,m:INTEGER;
+BEGIN
+    sum=0;
+    n:=arr1.lenght-1;
+    m:=arr2.lenght-1;
+    FOR i FROM 0 TO n STEP 1  DO
+        FOR j FROM 0 TO m STEP 1  DO
+            WHILE (arr1[i]<>arr2[j]) DO
+            sum:=sum+arr1[i];
+            BREAK
+            END_WHILE
+        END_FOR
+    END_FOR
+    FOR i FROM 0 TO m STEP 1  DO
+        FOR j FROM 0 TO n STEP 1  DO
+            WHILE (arr2[i]<>arr1[j]) DO
+            sum:=sum+arr2[i];
+            BREAK
+            END_WHILE
+        END_FOR
+    END_FOR
+        Write(sum)
+
+END
